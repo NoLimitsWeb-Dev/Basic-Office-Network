@@ -185,3 +185,33 @@ Phase 1 confirms that the local network fabric is correctly configured to suppor
 
 ***
 **Next Milestone:** Phase 2 - Deploying a Repurposed PC as a localized Intranet Web Server and internal Domain Name System (DNS) utility.
+---
+Let’s configure our Repurposed_PC Server to act as my internal local application and intranet server.
+In this phase, we will turn on the HTTP/HTTPS services, customize the webpage text, and test the access from your client workstation.
+---
+### 🌐 Step 1: Customize Your Local Web App / PortalPacket Tracer servers have a mini HTML editor built into them, allowing you to simulate actual web applications:
+
+1. Add a new PC and rename as Repurposed_PC
+2. Click on your Repurposed_PC server to open its dashboard.
+3. Go to the Services tab at the top.
+4. Select HTTP from the left-hand column menu.
+5. Ensure that both HTTP and HTTPS radio buttons are set to On.
+6. Look at the file manager list below. Find the file named index.html and click the edit link on the far right of that row.
+<img width="1129" height="565" alt="image" src="https://github.com/user-attachments/assets/bf0085ae-f3d3-43c6-97cf-e732d6c25d70" />
+
+7. Delete everything inside the editor, or clear it out and copy-paste this simple custom company landing page:
+<img width="1144" height="440" alt="image" src="https://github.com/user-attachments/assets/389c6274-7342-4aa9-b52b-e1e0d6e90a35" />
+
+8. Click the Save button at the top right of the editor box, and click Yes to overwrite the existing file. Close the server window.
+---
+
+### 🧪 Step 2: Test the Intranet from Your Workstation
+Now let's verify that the local client computer can pull up this web application across the network switch:
+1. Click on your Workstation PC (the same one you used for the FTP test).
+2. Go to the Desktop tab at the top.
+3. Find and click on the Web Browser application icon.
+4. In the URL bar at the top, type the IP address of your application server: 192.168.1.50 and press Enter (or click Go).
+<img width="1130" height="447" alt="image" src="https://github.com/user-attachments/assets/3ccd542f-3cd1-44e8-a60a-8c89452101cd" />
+
+Your customized webpage should immediately load up inside the simulation browser!
+
