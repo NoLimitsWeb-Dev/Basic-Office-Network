@@ -27,6 +27,24 @@ Role: Local Client End-Device
 
 ---
 
+### 🛠️ How to Simulate Smart NAT in Packet Tracer
+<img width="883" height="479" alt="image" src="https://github.com/user-attachments/assets/31d6defe-8836-4a88-9940-96eee16ff168" />
+
+To build this, open Packet Tracer and select the End Devices category (the icon looks like a desktop computer) in the bottom-left corner.
+1. Simulating Device 1: The Smart NAS
+Packet Tracer doesn't have an explicit icon labeled "NAS," but it has a generic Server device that handles storage protocols perfectly.
+* Add the Device: Drag a generic Server onto your workspace and rename it Smart_NAS.
+  <img width="1893" height="726" alt="image" src="https://github.com/user-attachments/assets/f3ac6528-f6b7-4f79-809f-48a9a454d601" />
+
+* Configure Network Settings: Click on the server, go to the Desktop tab, open IP Configuration, and give it a Static IP address (e.g., 192.168.1.50, Subnet Mask: 255.255.255.0, Gateway: 192.168.1.1).
+  <img width="1133" height="693" alt="image" src="https://github.com/user-attachments/assets/426a3c45-6eb3-4429-a9cc-2fbdce13531b" />
+
+* Turn on Storage Services: Go to the Services tab.
+     * Turn on the FTP service. This lets you simulate uploading and downloading company files.
+     * You can create a few mock user accounts with specific permissions (Read, Write, Delete) right inside the FTP service settings.
+       <img width="1146" height="582" alt="image" src="https://github.com/user-attachments/assets/4d58eb3b-0d1f-4e51-8db6-03cf32a793e7" />
+
+## 💻 Step 1: Add and Cable the WorkstationLook at the bottom-left corner of Packet Tracer, click on End Devices (the computer icon), and select the generic PC or Laptop.Drag it onto your workspace near your network switch.Select Connections (the lightning bolt icon), click on the Copper Straight-Through cable (the solid black line).Click on your new PC, choose FastEthernet0, then click on your Network Switch and choose any available port (e.g., FastEthernet0/3).
 ## ⚙️ Device Configurations
 
 ### 1. Network Addressing Schema (Static IPv4)
