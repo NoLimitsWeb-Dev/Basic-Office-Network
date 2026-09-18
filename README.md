@@ -44,7 +44,47 @@ Packet Tracer doesn't have an explicit icon labeled "NAS," but it has a generic 
      * You can create a few mock user accounts with specific permissions (Read, Write, Delete) right inside the FTP service settings.
        <img width="1146" height="582" alt="image" src="https://github.com/user-attachments/assets/4d58eb3b-0d1f-4e51-8db6-03cf32a793e7" />
 
-## 💻 Step 1: Add and Cable the WorkstationLook at the bottom-left corner of Packet Tracer, click on End Devices (the computer icon), and select the generic PC or Laptop.Drag it onto your workspace near your network switch.Select Connections (the lightning bolt icon), click on the Copper Straight-Through cable (the solid black line).Click on your new PC, choose FastEthernet0, then click on your Network Switch and choose any available port (e.g., FastEthernet0/3).
+###  Let's Add and Cable the Workstation
+💻 Step 1:
+1. Look at the bottom-left corner of Packet Tracer, click on End Devices (the computer icon), and select the generic PC or Laptop.
+2. Drag it onto your workspace near your network switch.
+3. Select Connections (the lightning bolt icon), click on the Copper Straight-Through cable (the solid black line).
+4. Click on your new PC, choose FastEthernet0, then click on your Network Switch and choose any available port (e.g., FastEthernet0/3).
+   <img width="681" height="470" alt="image" src="https://github.com/user-attachments/assets/be26996e-c34e-4c51-b27f-87d3cfb9638b" />
+
+
+###  Let's Give the Workstation an IP Address
+🌐 Step 2:
+Before the PC can talk to the NAS, it needs to be on the same network subnet:
+1. Click on the new PC to open its options.
+2. Go to the Desktop tab at the top and click on IP Configuration.
+3. Ensure Static is selected.
+4. Input the following settings:
+   * IP Address: 192.168.1.10 (Since my  NAS is 192.168.1.50)
+   * Subnet Mask: 255.255.255.0
+   * Default Gateway: 192.168.1.1
+   * Close the IP Configuration window.
+  <img width="1137" height="663" alt="image" src="https://github.com/user-attachments/assets/047dc022-84c4-4e03-82c5-a1bec67bc6e6" />
+
+### Create a Test File on the PC
+📝 Step 3:
+To test your Write to (Upload) permission, you need a local file on the laptop to send over to the NAS:
+1. Still inside the PC's Desktop tab, scroll down and open the Text Editor app.
+  <img width="682" height="599" alt="image" src="https://github.com/user-attachments/assets/9b5d32d4-08fd-4178-af97-653663ca0172" />
+
+2. Type a short message inside the file (e.g., Hello this is a backup test).
+3. Click File -> Save (or press Ctrl + S).
+4. Name the file test.txt and click OK. Close the Text Editor.
+   <img width="903" height="335" alt="image" src="https://github.com/user-attachments/assets/527df10f-ad2d-4678-a944-44e6a3f3df4d" />
+
+### 🧪 Step 4: Run the Live FTP Test
+Now let’s log in and push that file over to your simulated NAS:
+1. Still inside the PC's Desktop tab, click to open the Command Prompt.
+2. Type ping 192.168.1.50 (replace with your exact NAS IP) and press Enter. Ensure you get successful replies. If you don't, check your cabling.
+3. Type ftp 192.168.1.50 and press Enter.
+4. It will say Welcome to Packet Tracer FTP server. Enter your mock username (manager) and password (Pass123!). Your prompt will change to ftp>.
+5. Type put test.txt and press Enter.
+You should see a message saying Writing file... File transfer in progress... Transfer complete! This proves your Write permission is successfully active over your simulated network architecture.
 ## ⚙️ Device Configurations
 
 ### 1. Network Addressing Schema (Static IPv4)
