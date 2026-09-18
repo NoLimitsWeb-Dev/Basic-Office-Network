@@ -76,15 +76,21 @@ To test your Write to (Upload) permission, you need a local file on the laptop t
 3. Click File -> Save (or press Ctrl + S).
 4. Name the file test.txt and click OK. Close the Text Editor.
    <img width="903" height="335" alt="image" src="https://github.com/user-attachments/assets/527df10f-ad2d-4678-a944-44e6a3f3df4d" />
+---
+### Let's add the switch right now to bridge your PC and your Smart_NAS.
+In networking, computers and servers cannot plug directly into each other without a central junction box—that is what the Network Switch is for. It acts like a power strip for network cables, allowing all your local devices to exchange data.
+### 🎛️ Step 1: Add the Network Switch
+1. Look at the bottom-left menu of Packet Tracer and click on Network Devices (the icon looks like a router).
+2. Just below that row, a sub-menu will appear. Click on Switches (the icon looks like a small rectangular box with arrows pointing left and right).
+3. Select the 2960 switch model (this is a standard Cisco Catalyst 24-port switch).
+4. Drag it into the center of your workspace, right between your PC and your Smart_NAS.
+### 🔌 Step 2: Cable Everything to the Switch
+Now we will run cables from your individual devices into the switch ports:
+1. Click on the Connections icon (the lightning bolt) in the bottom-left corner.
+2. Select the Copper Straight-Through cable (the solid black line).
+3. Connect the PC: Click on your PC, select FastEthernet0, then click on the Switch and select FastEthernet0/1.
+4. Connect the NAS: Click the cable tool again. Click on your Smart_NAS, select FastEthernet0, then click on the Switch and select FastEthernet0/2.
 
-### 🧪 Step 4: Run the Live FTP Test
-Now let’s log in and push that file over to your simulated NAS:
-1. Still inside the PC's Desktop tab, click to open the Command Prompt.
-2. Type ping 192.168.1.50 (replace with your exact NAS IP) and press Enter. Ensure you get successful replies. If you don't, check your cabling.
-3. Type ftp 192.168.1.50 and press Enter.
-4. It will say Welcome to Packet Tracer FTP server. Enter your mock username (manager) and password (Pass123!). Your prompt will change to ftp>.
-5. Type put test.txt and press Enter.
-You should see a message saying Writing file... File transfer in progress... Transfer complete! This proves your Write permission is successfully active over your simulated network architecture.
 ## ⚙️ Device Configurations
 
 ### 1. Network Addressing Schema (Static IPv4)
@@ -113,15 +119,8 @@ To validate the deployment, end-to-end integration tests were performed from the
 
 ### Test 1: Layer 3 ICMP Connectivity (Ping)
 Executed to ensure the client machine could successfully reach the NAS across the switch fabric.
-```bash
-PC> ping 192.168.1.50
+<img width="1136" height="384" alt="image" src="https://github.com/user-attachments/assets/3ec6e25b-8a7d-4ab8-87da-2c21328f0565" />
 
-Pinging 192.168.1.50 with 32 bytes of data:
-Reply from 192.168.1.50: bytes=32 time=1ms TTL=128
-Reply from 192.168.1.50: bytes=32 time=1ms TTL=128
-
-Ping statistics for 192.168.1.50:
-    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss)
 ```
 *   **Result:** **SUCCESS**. Physical cabling and IP configurations are fully operational.
 
