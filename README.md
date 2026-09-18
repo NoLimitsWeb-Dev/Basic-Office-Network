@@ -179,7 +179,7 @@ Before moving on, let's verify that our permission settings actually block unaut
 <img width="1139" height="541" alt="image" src="https://github.com/user-attachments/assets/3b3cbb34-038e-4521-8a3c-1585c13095a1" />
 <img width="983" height="249" alt="image" src="https://github.com/user-attachments/assets/9ff9898c-8213-44b6-81ba-f37f26b3db4c" />
 
-
+*  **Result:** **ERROR**. Permission Denied
 ## 🏁 Phase 1 Conclusion
 Phase 1 confirms that the local network fabric is correctly configured to support secure, authenticated file transfers over a local area network (LAN). Data isolation and access control mechanisms behave as predicted by design specifications.
 
