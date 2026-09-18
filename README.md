@@ -12,12 +12,19 @@ The objective of Phase 1 is to establish a secure data vault that consolidates c
 ## 🏗️ Topology Architecture
 The network uses a star topology where all endpoint traffic is centralized through a physical layer-2 switch.
 
-[ 2960 Local Network Switch ]
-/                         
-/                           
-[ Smart_NAS (Server) ]          [ Workstation (PC) ]IP: 192.168.1.50                
-IP: 192.168.1.10 Role: FTP Storage Vault         
-Role: Local Client End-Device
+
+```
+
+                 [ 2960 Local Network Switch ]
+             /          │             │          \
+            /           │             │           \
+    [ Workstation 1 ]   │             │     [ All-in-One Server: Smart_NAT/Repurposed PC ]
+    IP: 192.168.1.10    │             │     IP: 192.168.1.50
+                        │             │     Roles: FTP, HTTP, & DNS
+                [ Workstation 2 ]     │
+                IP: 192.168.1.11      │
+
+```
 
 ### Hardware Components Emulated:
 *   **Switch:** 1x Cisco Catalyst 2960 (24-Port Layer 2 Switch)
@@ -202,6 +209,17 @@ In this phase, we will turn on the HTTP/HTTPS services, customize the webpage te
 7. Delete everything inside the editor, or clear it out and copy-paste this simple custom company landing page:
 <img width="1144" height="440" alt="image" src="https://github.com/user-attachments/assets/389c6274-7342-4aa9-b52b-e1e0d6e90a35" />
 
+```
+html
+<html>
+<center>
+    <h1>🏢 Welcome to the Internal Company Portal 🏢</h1>
+    <hr>
+    <p>This web service is running on your <b>Repurposed Desktop PC Server</b>.</p>
+    <p>Network Status: <b>ONLINE & SECURE</b></p>
+</center>
+</html>
+```
 8. Click the Save button at the top right of the editor box, and click Yes to overwrite the existing file. Close the server window.
 ---
 
@@ -249,4 +267,10 @@ For the client workstation to use this new feature, you must tell it which devic
 2. Instead of typing the numbers, type your clean address: mycompany.local and hit Enter.
 <img width="1140" height="406" alt="image" src="https://github.com/user-attachments/assets/f32ead52-f5cb-4774-8802-ae8a9eb66420" />
 
-The internal company portal should immediately open up, proving that your repurposed desktop is now successfully handling both web traffic and local network directory services.
+The internal company portal should immediately open up, proving that the repurposed desktop is now successfully handling both web traffic and local network directory services.
+
+---
+
+## 🏁 Final Project Sign-Off
+This deployment proves that a resource-conscious 4-device topology layout can successfully provide core corporate file systems, localized web application hosting, and internal DNS directory lookups smoothly inside a closed local area network (LAN).
+---
