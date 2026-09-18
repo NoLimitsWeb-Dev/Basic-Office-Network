@@ -215,3 +215,38 @@ Now let's verify that the local client computer can pull up this web application
 
 Your customized webpage should immediately load up inside the simulation browser!
 
+🧠 Step 3: Upgrading Phase 2 (Optional)
+
+Right now, I have to type the clunky IP address 192.168.1.50 to see your portal. Real users like to use names.
+
+If I want to take this a step further, I can turn on the DNS (Domain Name System) service right inside the same Repurposed_PC so that typing a clean name like company.local automatically opens up my webpage.
+
+In the real world, this mirrors a Linux server running both Apache (Web) and BIND (DNS) at the same time to save space and hardware costs.
+
+Here is exactly how to set up the DNS routing on your current network:
+
+🧩 Step 1: Turn on DNS on the Repurposed_PC
+1. Click on your Repurposed_PC server.
+2. Go to the Services tab and click on DNS in the left column.
+3. Turn the DNS Service ON using the radio button.
+4. In the Name box, type your desired shortcut URL (e.g., company.local).
+5. In the Address box, type the IP address of the web server itself: 192.168.1.60.
+6. Click the Add button. You will see the record appear in the table below.
+<img width="1140" height="574" alt="image" src="https://github.com/user-attachments/assets/607d5c54-6d2b-45d3-b80c-92336702dbaa" />
+
+🔌 Step 2: Tell the Workstation Where to Find DNS
+
+For the client workstation to use this new feature, you must tell it which device handles domain names:
+1. Click on your client Workstation PC.
+2. Go to Desktop -> IP Configuration.
+3. Locate the DNS Server field at the bottom and type: 192.168.1.50.
+<img width="1138" height="698" alt="image" src="https://github.com/user-attachments/assets/0e776cd4-5556-46e6-9951-ba77fc1a9575" />
+
+4. Close out of the configuration window.
+
+🧪 Step 3: Test the Friendly Name URL
+1. Still on the Workstation PC, open the Web Browser application again.
+2. Instead of typing the numbers, type your clean address: mycompany.local and hit Enter.
+<img width="1140" height="406" alt="image" src="https://github.com/user-attachments/assets/f32ead52-f5cb-4774-8802-ae8a9eb66420" />
+
+The internal company portal should immediately open up, proving that your repurposed desktop is now successfully handling both web traffic and local network directory services.
