@@ -168,6 +168,18 @@ ftp> get test.txt
 
 ---
 
+## 🏠Let's Test My Security Restrictions
+Before moving on, let's verify that our permission settings actually block unauthorized actions. This simulates real-world security access control:
+1. The Unauthorized Command Test: Log back into the FTP server from your PC using your manager account. Try to run the rename command (e.g., rename test.txt backup.txt). Because you unchecked the Rename permission earlier, the server should explicitly deny you.
+<img width="770" height="106" alt="image" src="https://github.com/user-attachments/assets/26a6e198-b994-413c-9046-e4de416bb007" />
+
+*  **Result:** **ERROR**. Permission Denied
+---
+2. The Malicious User Test: Let's Go back to your Smart_NAS FTP service settings and create a second user account named guest with a password of 123. Check only the Read and List boxes (leave Write and Delete blank). Go to your PC, log in as guest, and try to run put test.txt. The network should block it, demonstrating how a NAS protects files from low-privilege users.
+<img width="1139" height="541" alt="image" src="https://github.com/user-attachments/assets/3b3cbb34-038e-4521-8a3c-1585c13095a1" />
+<img width="983" height="249" alt="image" src="https://github.com/user-attachments/assets/9ff9898c-8213-44b6-81ba-f37f26b3db4c" />
+
+
 ## 🏁 Phase 1 Conclusion
 Phase 1 confirms that the local network fabric is correctly configured to support secure, authenticated file transfers over a local area network (LAN). Data isolation and access control mechanisms behave as predicted by design specifications.
 
