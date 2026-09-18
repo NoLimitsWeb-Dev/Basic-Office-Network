@@ -113,13 +113,25 @@ The File Transfer Protocol (FTP) engine on the `Smart_NAS` was activated to simu
 
 ---
 
-## 🧪 Verification & Testing Procedures
+## 🧪 Verification: Run the Live FTP Test
+Now let’s log in and push that file over to your simulated NAS:
+1. Still inside the PC's Desktop tab, click to open the Command Prompt.
+2. Type ping 192.168.1.50 (NAS IP) and press Enter. 
+<img width="1146" height="386" alt="image" src="https://github.com/user-attachments/assets/54fe5715-1c61-46f5-9967-ed668cfe1da9" />
 
-To validate the deployment, end-to-end integration tests were performed from the workstation command line interface (CLI).
+* Since I got successful replies. It means i don't need to check my cabling: Physical cabling and IP configurations are fully operational.
 
-### Test 1: Layer 3 ICMP Connectivity (Ping)
-Executed to ensure the client machine could successfully reach the NAS across the switch fabric.
-<img width="1136" height="384" alt="image" src="https://github.com/user-attachments/assets/3ec6e25b-8a7d-4ab8-87da-2c21328f0565" />
+3. Type ftp 192.168.1.50 and press Enter.
+4. It will say Welcome to Packet Tracer FTP server. Enter your mock username (manager) and password (Pass123!). Your prompt will change to ftp>.
+<img width="417" height="187" alt="image" src="https://github.com/user-attachments/assets/afa29f36-c618-4303-b545-eb4ee3bef32c" />
+
+5. Type put test.txt and press Enter.
+<img width="411" height="144" alt="image" src="https://github.com/user-attachments/assets/c3a6ecb3-5bd4-489c-8266-68da73d4b1e8" />
+
+
+This proves your Write permission is successfully active over your simulated network architecture.
+
+
 
 ```
 *   **Result:** **SUCCESS**. Physical cabling and IP configurations are fully operational.
@@ -152,6 +164,7 @@ ftp> get test.txt
 226 Transfer complete.
 ```
 *   **Result:** **SUCCESS**. Read privileges verified.
+<img width="582" height="121" alt="image" src="https://github.com/user-attachments/assets/45e5a607-3dda-45b3-8ce8-145b610718eb" />
 
 ---
 
